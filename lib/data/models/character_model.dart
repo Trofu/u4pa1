@@ -24,11 +24,9 @@ class CharacterModel {
       image: json['image'] == '' || json['image'] == null ?
       'https://static.thenounproject.com/png/7729-200.png' : json['image'],
       varita: new VaritaModel(
-        madera: varitas['wood'] == '' || json['wood'] == null ?
-        'No Wood' : varitas['wood'],
-        core: varitas['core'] == '' || json['core'] == null ?
-        'No Core' : varitas['core'],
-        longitud: varitas['length'] == 0 || json['length'] == null ?
+        madera: varitas['wood'] ?? '',
+        core: varitas['core'] ?? '',
+        longitud: varitas['length'] == 0 || varitas['length'] == null ?
         5 : varitas['length'],
       )
     );

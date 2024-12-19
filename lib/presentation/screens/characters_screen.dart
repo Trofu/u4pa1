@@ -74,6 +74,7 @@ class _CharacterScreenState extends State<CharactersScreen> {
                     itemCount: state.characters.length,
                     itemBuilder: (context, index) {
                       final character = state.characters[index];
+                      print(character);
                       return ListTile(
                         leading: Image.network(character.image),
                         title: Row(

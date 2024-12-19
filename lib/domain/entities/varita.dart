@@ -12,8 +12,9 @@ class Varita{
 
   @override
   String toString() {
-    if(madera.isEmpty || core.isEmpty)
-      return '';
-    return ' - Varita -> madera: $madera, core: $core, longitud: $longitud';
+    if(madera.isEmpty || core.isEmpty){
+      return ' - Varita -> madera: No Wood, core: No Core, longitud: $longitud';
+    }
+      return ' - Varita -> madera: $madera, core: $core, longitud: $longitud';
   }
 }
