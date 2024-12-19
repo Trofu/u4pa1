@@ -19,13 +19,17 @@ class CharacterModel {
   factory CharacterModel.fromJson(Map<String, dynamic> json) {
     Map<String,dynamic> varitas = json['wand'];
     return CharacterModel(
-      name: json['name'],
+      name: json['name'] ?? 'Unknown',
       house: json['house'] ?? 'Unknown',
-      image: json['image'] == '' ? 'https://static.thenounproject.com/png/7729-200.png' : json['image'],
+      image: json['image'] == '' || json['image'] == null ?
+      'https://static.thenounproject.com/png/7729-200.png' : json['image'],
       varita: new VaritaModel(
-          madera: varitas['wood'] ?? '',
-          core: varitas['core'] ?? '',
-          longitud: varitas['length'] ?? 0,
+        madera: varitas['wood'] == '' || json['wood'] == null ?
+        'No Wood' : varitas['wood'],
+        core: varitas['core'] == '' || json['core'] == null ?
+        'No Core' : varitas['core'],
+        longitud: varitas['length'] == 0 || json['length'] == null ?
+        5 : varitas['length'],
       )
     );
   }
