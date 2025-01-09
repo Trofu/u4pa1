@@ -18,6 +18,7 @@ class CharacterModel {
 
   factory CharacterModel.fromJson(Map<String, dynamic> json) {
     Map<String,dynamic> varitas = json['wand'];
+    print(json);
     return CharacterModel(
       name: json['name'] ?? 'Unknown',
       house: json['house'] ?? 'Unknown',
@@ -26,8 +27,7 @@ class CharacterModel {
       varita: new VaritaModel(
         madera: varitas['wood'] ?? '',
         core: varitas['core'] ?? '',
-        longitud: varitas['length'] == 0 || varitas['length'] == null ?
-        5 : varitas['length'],
+        longitud: varitas['length'] == 0 || varitas['length'] == null ? 5 : 0.0+varitas['length'],
       )
     );
   }

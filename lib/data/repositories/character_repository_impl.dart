@@ -11,7 +11,9 @@ class CharacterRepositoryImpl implements CharacterRepository {
   @override
   Future<Either<Exception, List<Character>>> getAllCharacters() async {
     try {
+      print("Llega 1");
       final characterModels = await remoteDataSource.getAllCharacters();
+      print("hola");
       return Right(characterModels
         .map((model) => Character(
           name: model.name,
@@ -22,7 +24,7 @@ class CharacterRepositoryImpl implements CharacterRepository {
         .toList());
     } catch (e) {
       print(e);
-      return Left(Exception('Error al cargar personajes'));
+      return Left(Exception('Error al pasar de api a entidad'));
     }
   }
 }

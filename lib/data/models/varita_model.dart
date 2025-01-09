@@ -1,6 +1,3 @@
-
-
-
 import '../../domain/entities/varita.dart';
 
 class VaritaModel {
@@ -22,4 +19,10 @@ class VaritaModel {
       'length': varita.longitud,
     };
   }
+
+  @override
+  String toString() {
+    return varita.toString();
+  }
+
 }

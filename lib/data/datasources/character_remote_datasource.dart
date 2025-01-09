@@ -21,7 +21,7 @@ class CharacterRemoteDataSourceImpl implements CharacterRemoteDataSource {
           .toList();
     } else {
       print('Error peticion');
-      throw Exception('Error al cargar personajes');
+      throw Exception('Error al cargar personajes de la api');
     }
   }
 }
